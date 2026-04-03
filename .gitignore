@@ -1,5 +1,18 @@
+# Node
 node_modules/
+
+# Terraform
 .terraform/
 *.tfstate
 *.tfstate.backup
+
+# Environment files
 .env
+
+# AWS credentials (extra safety)
+.aws/
+credentials
+
+# Kubernetes config
+kubeconfig
+.kube/
