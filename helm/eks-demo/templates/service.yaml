@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: eks-demo-service
 spec:
-  type: "{{ .Values.service.type }}"
+  type: {{ .Values.service.type }}
   selector:
     app: eks-demo
   ports:
-    - port: "{{ .Values.service.port }}"
+    - port: {{ .Values.service.port }}
       targetPort: 3000
