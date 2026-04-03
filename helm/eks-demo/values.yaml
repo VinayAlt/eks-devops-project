@@ -1,7 +1,12 @@
+replicaCount: 1
+
 image:
-  repository: 784074784226.dkr.ecr.ap-south-1.amazonaws.com/eks-demo
-  tag: latest
+  repository: ""
+  tag: ""
+  pullPolicy: Always
 
 service:
   type: LoadBalancer
   port: 80
+
+containerPort: 3000
