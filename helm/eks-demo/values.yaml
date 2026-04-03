@@ -1,0 +1,7 @@
+image:
+  repository: 784074784226.dkr.ecr.ap-south-1.amazonaws.com/eks-demo
+  tag: latest
+
+service:
+  type: LoadBalancer
+  port: 80
