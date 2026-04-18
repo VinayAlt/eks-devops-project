@@ -3,13 +3,13 @@ FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-# Copy only package files first (for caching)
+# Copy package files first (for better caching)
 COPY package*.json ./
 
-# Install only production dependencies
+# Install production dependencies
 RUN npm install --omit=dev
 
-# Copy application code
+# Copy all app files (app.js, login.html, signup.html)
 COPY . .
 
 # Stage 2: Run the app
@@ -17,14 +17,14 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Copy from builder
+# Copy from builder stage
 COPY --from=builder /app .
 
-# Expose app port
-EXPOSE 3000
-
-# Environment variable (optional but good practice)
+# Set environment
 ENV NODE_ENV=production
 
-# Start application
+# Expose port
+EXPOSE 3000
+
+# Start app
 CMD ["node", "app.js"]

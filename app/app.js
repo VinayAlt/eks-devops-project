@@ -6,18 +6,42 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// 👇 IMPORTANT: serve login.html
+// TEMP: store users in memory
+const users = [];
+
+// Login page
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'login.html'));
 });
 
+// Signup page
+app.get('/signup', (req, res) => {
+  res.sendFile(path.join(__dirname, 'signup.html'));
+});
+
+// Handle signup
+app.post('/signup', (req, res) => {
+  const { name, email, password } = req.body;
+
+  users.push({ name, email, password });
+
+  console.log("Users:", users);
+
+  res.send('<h2>Signup successful 🎉 <br><a href="/">Login Now</a></h2>');
+});
+
+// Handle login
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
 
-  if (email === 'admin@test.com' && password === '1234') {
-    res.send('<h2>Login Successful 🎉</h2>');
+  const user = users.find(
+    (u) => u.email === email && u.password === password
+  );
+
+  if (user) {
+    res.send(`<h2>Welcome ${user.name} 🎉</h2>`);
   } else {
-    res.send('<h2>Invalid Credentials ❌</h2>');
+    res.send('<h2>Invalid credentials ❌</h2>');
   }
 });
 
