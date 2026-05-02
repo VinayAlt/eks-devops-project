@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Job | ATS</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .job-container {
+      background: white;
+      width: 500px;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      margin: 0;
+      color: #111827;
+      font-size: 28px;
+    }
+
+    .header p {
+      color: #6b7280;
+      margin-top: 8px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #374151;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus, select:focus {
+      border-color: #2563eb;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 25px;
+      padding: 15px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="job-container">
+
+    <div class="header">
+      <h1>Create New Job 🚀</h1>
+      <p>Publish a new hiring opportunity</p>
+    </div>
+
+    <form method="POST" action="/create-job">
+
+      <label>Job Title</label>
+      <input type="text" name="title" placeholder="Ex: DevOps Engineer" required>
+
+      <label>Required Skills</label>
+      <input type="text" name="skills" placeholder="Ex: AWS, Docker, Kubernetes" required>
+
+      <label>Experience</label>
+      <select name="experience" required>
+        <option value="">Select Experience</option>
+        <option>0-2 Years</option>
+        <option>2-5 Years</option>
+        <option>5-8 Years</option>
+        <option>8+ Years</option>
+      </select>
+
+      <label>Location</label>
+      <input type="text" name="location" placeholder="Ex: Bangalore" required>
+
+      <button type="submit">Create Job</button>
+
+    </form>
+
+  </div>
+
+</body>
+</html>

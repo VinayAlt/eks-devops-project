@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Apply for Job | ATS</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #0ea5e9);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .apply-container {
+      background: white;
+      width: 500px;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 0;
+      color: #111827;
+    }
+
+    p {
+      text-align: center;
+      color: #6b7280;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      font-size: 15px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 25px;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      background: #16a34a;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #15803d;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="apply-container">
+
+    <h1>Apply for Job 🚀</h1>
+    <p>Submit your application</p>
+
+    <form method="POST" action="/apply">
+
+      <label>Full Name</label>
+      <input type="text" name="name" required>
+
+      <label>Email</label>
+      <input type="email" name="email" required>
+
+      <label>Phone Number</label>
+      <input type="text" name="phone" required>
+
+      <label>Experience</label>
+      <select name="experience" required>
+        <option value="">Select</option>
+        <option>0-2 Years</option>
+        <option>2-5 Years</option>
+        <option>5-8 Years</option>
+        <option>8+ Years</option>
+      </select>
+
+      <button type="submit">Apply Now</button>
+
+    </form>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ATS Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+    }
+
+    .navbar {
+      background: #1f2937;
+      color: white;
+      padding: 20px 40px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      padding: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      width: 250px;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .card h2 {
+      margin: 0;
+      color: #111827;
+    }
+
+    .card p {
+      color: #6b7280;
+      margin-top: 10px;
+    }
+
+    .welcome {
+      margin: 30px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #111827;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    ATS Recruiter Dashboard 🚀
+  </div>
+
+  <div class="welcome">
+    Welcome Back!
+  </div>
+  
+  <div style="margin: 20px 30px;">
+  <a href="/create-job">
+    <button style="
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;">
+      Create Job ➕
+    </button>
+  </a>
+</div>
+
+<a href="/jobs">
+  <button style="
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #059669;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 10px;">
+    View Jobs 📋
+  </button>
+</a>
+
+<a href="/candidates">
+  <button style="
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #7c3aed;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 10px;">
+    View Candidates 👨‍💼
+  </button>
+</a>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>25</h2>
+      <p>Active Jobs</p>
+    </div>
+
+    <div class="card">
+      <h2>142</h2>
+      <p>Total Candidates</p>
+    </div>
+
+    <div class="card">
+      <h2>18</h2>
+      <p>Interviews Scheduled</p>
+    </div>
+
+    <div class="card">
+      <h2>6</h2>
+      <p>Offers Released</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
