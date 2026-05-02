@@ -15,5 +15,11 @@ spec:
       containers:
       - name: eks-demo
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        env:
+          - name: MONGO_URI
+            valueFrom:
+              secretKeyRef:
+                name: mongodb-secret
+                key: MONGO_URI
         ports:
         - containerPort: 3000
