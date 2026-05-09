@@ -38,4 +38,23 @@ module "eks" {
       ami_type = "AL2_x86_64"
     }
   }
+    node_security_group_additional_rules = {
+    grafana = {
+      description = "Grafana NodePort"
+      protocol    = "tcp"
+      from_port   = 32000
+      to_port     = 32000
+      type        = "ingress"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+
+    prometheus = {
+      description = "Prometheus NodePort"
+      protocol    = "tcp"
+      from_port   = 32001
+      to_port     = 32001
+      type        = "ingress"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+  }
 }
