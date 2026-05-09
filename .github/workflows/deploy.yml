@@ -48,3 +48,15 @@ jobs:
         helm upgrade --install eks-demo ./helm/eks-demo \
           --set image.repository=784074784226.dkr.ecr.ap-south-1.amazonaws.com/eks-demo \
           --set image.tag=$IMAGE_TAG
+
+    - name: add Helm repo
+      run: |
+        helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+        helm repo update
+
+    - name: Install monitoring stack
+      run: |
+        helm upgrade --install monitoring prometheus-community/kube-prometheus-stack \
+          --namespace monitoring \
+          --create-namespace \
+          -f helm/monitoring-values.yaml
