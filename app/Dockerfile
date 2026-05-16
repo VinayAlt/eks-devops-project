@@ -17,7 +17,6 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-
 # Copy from builder stage
 COPY --from=builder /app .
 
